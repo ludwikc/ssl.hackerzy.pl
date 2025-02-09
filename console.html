@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSL: Support, Strength, Loyalty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #012456; /* PowerShell blue */
+      color: #FFFFFF; /* White */
+      font-family: 'Consolas', monospace;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .console {
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 2px solid darkgray;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 15px darkgray;
+      height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .console-title-bar {
+      background: linear-gradient(to right, darkgray, gray);
+      color: white;
+      padding: 8px 10px;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid darkgray;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 15px darkgray;
+    }
+    
+    .prompt {
+      color: #00FF00; /* Green */
+    }
+    
+    .command-input {
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      width: 80%;
+      outline: none;
+    }
+    
+    .blink {
+      animation: blink 1s step-end infinite;
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 console-title-bar">
+        <span><strong>SSL.HACKERZY.PL</strong> - Secure Connection Established...</span>
+        <div>
+          <span style="margin-right: 10px;">&#8211;</span>
+          <span style="margin-right: 10px;">&#9633;</span>
+          <span>&#10005;</span>
+        </div>
+      </div>
+      <div class="col-md-10 console p-4">
+        <!-- ASCII Art Header -->
+        <pre style="color: #5A5A5A;"> <!-- DarkGray -->
+Witaj w społeczności <strong>SSL.HACKERZY.PL - Support, Strength, Loyalty.</strong>
+Jesteśmy grupą mężczyzn z branży IT, którzy wspierają się nawzajem w rozwoju zawodowym i osobistym.
+Aby rozpocząć, wpisz 'help' aby zobaczyć dostępne komendy.
+        </pre>
+        
+        <!-- Console Content -->
+        <div id="console-output">
+          <p style="color: #5A5A5A;">PS C:\SSL> <span style="color: #00FF00;">Witaj w terminalu SSL.HACKERZY.PL</span></p>
+        </div>
+        
+        <!-- Input Line -->
+        <div class="input-line d-flex align-items-center">
+          <span class="prompt">PS C:\SSL></span>
+          <input type="text" class="command-input ms-2" autofocus 
+                 style="color: #FFFFFF; caret-color: #FFFFFF;" id="commandInput">
+          <span class="blink" style="color: #FFFFFF;">_</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 16 Command Blocks for the Customer Journey
+    const commands = {
+      'help': () => {
+        return `<p style="color: #00FFFF;">Dostępne komendy:</p>
+                <ul style="color: #FFFF00;">
+                  <li>brain - Inicjalizacja Brain Mode</li>
+                  <li>identity - Kim jesteśmy?</li>
+                  <li>spec - Korzyść 1: Ekipa do zadań specjalnych</li>
+                  <li>rel - Korzyść 2: Budowanie relacji</li>
+                  <li>breath - Korzyść 3: Przestrzeń do oddechu</li>
+                  <li>practice - Jak to działa: Spotkania i wyzwania</li>
+                  <li>target - Dla kogo?</li>
+                  <li>emotions - Autentyczne emocje</li>
+                  <li>motivation - Dlaczego warto?</li>
+                  <li>example1 - Przykład: Marek</li>
+                  <li>example2 - Przykład: Krzysztof</li>
+                  <li>summary - Podsumowanie</li>
+                  <li>deploy - Proces rekrutacji</li>
+                  <li>protocol - SSL Protocol</li>
+                  <li>founder - Wiadomość założyciela</li>
+                  <li>quote - Cytat końcowy</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz jedną z powyższych komend, aby kontynuować.</p>`;
+      },
+      'brain': () => {
+        return `<p style="color: #00FF00;">Invoke-BrainMode -Message "Inicjalizacja: Zebrać mocnych ludzi, którzy rozwiązują problemy i idą do przodu."</p>
+                <p style="color: #5A5A5A;">Brain Mode Activated: Tak, gramy w otwarte karty.</p>
+                <p style="color: #FFFF00;">Wpisz 'identity' aby dowiedzieć się, kim jesteśmy.</p>`;
+      },
+      'identity': () => {
+        return `<p style="color: #00FF00;">Get-Identity -Section "KIM JESTEŚMY"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Grupą mężczyzn z branży IT, odnoszących sukcesy w pracy i życiu prywatnym.</li>
+                  <li>Zero coachów motywacyjnych – motywację mamy sami.</li>
+                  <li>Przyjaźń w stylu: "3 w nocy? Jedziemy!"</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'spec' aby zobaczyć pierwszą korzyść.</p>`;
+      },
+      'spec': () => {
+        return `<p style="color: #00FF00;">Get-Benefits -Type "Specjalnych"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Ludzie, na których możesz polegać w każdej sytuacji.</li>
+                  <li>Braterstwo oparte na bezwarunkowym wsparciu i zaufaniu.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'rel' aby przejść do budowania relacji.</p>`;
+      },
+      'rel': () => {
+        return `<p style="color: #00FF00;">Get-Benefits -Type "Relacje"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Nie polegasz wyłącznie na starych znajomościach.</li>
+                  <li>Spotkasz ludzi, którzy rozumieją wyzwania IT i życia pod presją.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'breath' aby poznać przestrzeń do oddechu.</p>`;
+      },
+      'breath': () => {
+        return `<p style="color: #00FF00;">Get-Benefits -Type "Oddechu"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Miejsce na szczere rozmowy o tym, co gryzie.</li>
+                  <li>Przestrzeń, gdzie można wyrzucić trudne emocje bez oceniania.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'practice' aby dowiedzieć się, jak to działa.</p>`;
+      },
+      'practice': () => {
+        return `<p style="color: #00FF00;">Show-Practice -Mode "Real"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Regularne spotkania online oraz męskie wypady w realu.</li>
+                  <li>Wyzwania: góry, kodowanie, survival i inne akcje.</li>
+                  <li>Dostęp 24/7 na naszym Discordzie.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'target' aby sprawdzić, dla kogo to jest.</p>`;
+      },
+      'target': () => {
+        return `<p style="color: #00FF00;">Get-Target -Audience "TrueMen"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Dla tych, którym idzie nieźle, ale brakuje lojalnej ekipy.</li>
+                  <li>Dla tych, którzy mają dość instagramowego coachingu.</li>
+                  <li>Dla tych, co wiedzą, że liczy się prawdziwe braterstwo.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'emotions' aby poznać autentyczne emocje.</p>`;
+      },
+      'emotions': () => {
+        return `<p style="color: #00FF00;">Test-Emotions -Mode "Authentic"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Nie robimy wielkich eventów terapeutycznych.</li>
+                  <li>Prawdziwe rozmowy bez presji – mówisz, co czujesz.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'motivation' aby poznać powody, dla których warto dołączyć.</p>`;
+      },
+      'motivation': () => {
+        return `<p style="color: #00FF00;">Get-Motivation -Source "Brotherhood"</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Nawet najtwardszy samiec potrzebuje paczki kumpli.</li>
+                  <li>Wsparcie w IT i życiu prywatnym to klucz do sukcesu.</li>
+                  <li>Różnice charakterów tworzą wspólnotę, która się uzupełnia.</li>
+                </ul>
+                <p style="color: #FFFF00;">Wpisz 'example1' aby zobaczyć przykład z życia.</p>`;
+      },
+      'example1': () => {
+        return `<p style="color: #00FF00;">Invoke-RealExample -Profile "Marek (Tech Lead, 34)"</p>
+                <p style="color: #FFFFFF;">Marek (Tech Lead, 34): Zawsze miał siłę i determinację, lecz czuł, że brakuje mu kumpli, którym mógł zaufać. W SSL znalazł gości, z którymi mógł rozmawiać o wszystkim – od kodowania, po nocne akcje "muszę szybko coś załatwić".</p>
+                <p style="color: #FFFF00;">Wpisz 'example2' aby zobaczyć kolejny przykład.</p>`;
+      },
+      'example2': () => {
+        return `<p style="color: #00FF00;">Invoke-RealExample -Profile "Krzysztof (Startup Founder, 28)"</p>
+                <p style="color: #FFFFFF;">Krzysztof (Startup Founder, 28): Pewny siebie, lecz czasem wypalony. SSL pokazał mu, że prawdziwe wsparcie kolegów łączy pasję do IT z życiem pełnym wrażeń.</p>
+                <p style="color: #FFFF00;">Wpisz 'summary' aby zobaczyć podsumowanie.</p>`;
+      },
+      'summary': () => {
+        return `<p style="color: #00FF00;">Summarize-SSL -Detail "Full"</p>
+                <p style="color: #FFFFFF;">Podsumowanie:</p>
+                <ul style="color: #FFFFFF;">
+                  <li>Nie jesteśmy grupą przytulankową.</li>
+                  <li>Nie prowadzimy instagramowego coachingu ani terapii grupowej.</li>
+                  <li>Tworzymy high-trust network dla mężczyzn, którzy osiągnęli sukces, ale chcą więcej.</li>
+                </ul>
+                <p style="color: #FFFFFF;">Mówisz "brat", myślimy "commit". Mówisz "kryzys", myślimy "merge request". Mówisz "pomoc" – już jedziemy.</p>
+                <p style="color: #FFFF00;">Wpisz 'deploy' aby przejść do procesu rekrutacji.</p>`;
+      },
+      'deploy': () => {
+        return `<p style="color: #00FF00;">Start-DeploymentProcess</p>
+                <ol style="color: #FFFFFF;">
+                  <li>Wypełnij formularz rekrutacyjny</li>
+                  <li>Przejdź rozmowę weryfikacyjną 1:1</li>
+                  <li>Get commit access do braterstwa</li>
+                </ol>
+                <p style="color: #FF0000;">⚠️ UWAGA: Tylko 3 miejsca w aktualnym sprintcie!<br>Kolejny nabór latem 2025<br>Roczny dostęp: <span style="text-decoration:line-through">900 (early bird)</span> 1500 PLN<br><br>Dostęp do Lifehackerzy.pl: Na zawsze, zachowasz go również po wygaśnięciu dostępu do SSL.</p>
+                <button onclick="window.location.href='/join'" 
+                        style="background: #012456; color: #00FF00; border: 1px solid #5A5A5A; padding: 5px;">
+                  EXECUTE JOIN_SSL.NOW
+                </button>`;
+      },
+      'protocol': () => {
+        return `<p style="color: #00FF00;">Invoke-SSLProtocol</p>
+                <p style="color: #FFFFFF;">Szukasz miejsca, gdzie rozwijasz się bez mentora, tylko z prawdziwymi kumplami gotowymi na wyzwania? To tu pasujesz.</p>
+                <p style="color: #FFFF00;">Wpisz 'founder' aby przeczytać wiadomość założyciela.</p>`;
+      },
+      'founder': () => {
+        return `<p style="color: #00FF00;">Show-FoundersMessage</p>
+                <p style="color: #FFFFFF;">"Przez lata miałem głównie znajome kobiety. I super, ale brakowało mi ekipy gotowej wsiąść w auto w środku nocy. Teraz tworzę to, czego zawsze chciałem doświadczyć." – Ludwik, założyciel</p>
+                <p style="color: #FFFF00;">Wpisz 'quote' aby zobaczyć końcowy cytat.</p>`;
+      },
+      'quote': () => {
+        return `<p style="color: #00FF00;">Write-Quote</p>
+                <p style="color: #FFFFFF;">"W świecie, gdzie każdy chce być samotnym wilkiem, prawdziwą siłą jest mieć pack, na którym możesz polegać."</p>
+                <p style="color: #FFFF00;">Dziękujemy za zapoznanie się z SSL. Wpisz 'deploy' aby dołączyć do braterstwa.</p>`;
+      },
+      'events': () => {
+        return `<p style="color: #FFFF00;">Upcoming Ops:<br>
+                -----------------<br>
+                • 2023-11-15: Mountain Stress Test v2.0<br>
+                • 2023-12-01: Annual Debugging Retreat<br>
+                • 2023-12-24: Night Watch Support Shift</p>`;
+      },
+      'clear': () => {
+        document.getElementById('console-output').innerHTML = '';
+        return '';
+      }
+    };
+
+    document.getElementById('commandInput').addEventListener('keypress', (e) => {
+      if(e.key === 'Enter') {
+        const command = e.target.value.toLowerCase();
+        e.target.value = '';
+        
+        const output = commands[command] 
+          ? commands[command]() 
+          : `<p style="color: #FF0000;">SSL Error: Command '${command}' not recognized</p>`;
+        
+        document.getElementById('console-output').innerHTML += `
+          <p style="color: #5A5A5A;">PS C:\SSL> ${command}</p>
+          ${output}
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

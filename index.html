@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSL – The Console of Brotherhood</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Overall PowerShell Console Look */
+    body {
+      background-color: #002456; /* PowerShell Blue */
+      color: gray;
+      font-family: Consolas, 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+    }
+    .console {
+      max-width: 900px;
+      margin: 5% auto;
+      border: 2px solid darkgray;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 15px darkgray;
+      background-color: #002456;
+    }
+    .console-title-bar {
+      background: linear-gradient(to right, darkgray, gray);
+      color: white;
+      padding: 8px 10px;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .console-content {
+      padding: 20px;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+    /* Command history styling */
+    .cmd-block {
+      margin-bottom: 20px;
+    }
+    .cmd-line {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    .cmd-output {
+      margin-left: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+    .prompt {
+      color: cyan;
+    }
+    .command {
+      color: white;
+    }
+    .output {
+      color: gray;
+    }
+    /* For inline highlights (like bullet commands) */
+    .bullet {
+      color: yellow;
+      margin-right: 5px;
+    }
+    a.btn-console {
+      margin-top: 10px;
+      color: white;
+      border: 1px solid white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-family: inherit;
+    }
+    a.btn-console:hover {
+      background-color: white;
+      color: #002456;
+    }
+  </style>
+</head>
+<body>
+  <div class="console">
+    <div class="console-title-bar">
+      <span>Windows PowerShell</span>
+      <div>
+        <span style="margin-right: 10px;">&#8211;</span>
+        <span style="margin-right: 10px;">&#9633;</span>
+        <span>&#10005;</span>
+      </div>
+    </div>
+    <div class="console-content">
+      
+      <!-- Command Block 1: Brain Mode -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Invoke-SSLCommunity -Message <span class="bullet">"Chodzi o to, żeby zebrać mocnych ludzi, którzy już są zaradni życiowo, potrafią rozwiązywać problemy i prą do przodu – ale brakuje im ekipy, która stoi za nimi murem bez zadawania zbędnych pytań."</span></span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">SSL Community Mode Activated: Tak, gramy w otwarte karty.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 2: Who We Are -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Get-Identity -Section <span class="bullet">"KIM JESTEŚMY"</span></span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Grupą mężczyzn, którzy odnoszą swoje sukcesy: w branży IT, w projektach prywatnych, w życiu zawodowym.</span><br>
+          <span class="output">Ludźmi, którzy nie potrzebują "coacha od motywacji" – bo motywację już mają (a przynajmniej z reguły).</span><br>
+          <span class="output">Facetami, którzy chcą prawdziwej męskiej przyjaźni: takiej, gdzie jak zadzwonisz o 3 w nocy z tekstem "Chodź, trzeba załatwić sprawę", to jedyne pytanie to "Wziąć szpadel?".</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 3: Benefits – Specjalnych -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Get-Identity -Type <span class="bullet">"KOGO TU SPOTKASZ"</span></span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Ludzi, na których możesz polegać w każdej sytuacji, bez bycia ocenianym za "słabości".</span><br>
+          <span class="output">Braterstwo, które nie polega na przytulaniu i głaskaniu się po ramieniu, ale przede wszystkim na <strong>bezwarunkowym wsparciu i zaufaniu</strong>.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 4: Benefits – Relacje -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Get-Benefits -Type "Relacje"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Już nie musisz liczyć tylko na stare znajomości ze studiów, które dawno przestały Cię rozumieć.</span><br>
+          <span class="output">Spotkasz tu ludzi, którzy wiedzą, jak rozwijać się w IT, walczyć z presją, stawiać sobie wysokie wymagania – i jednocześnie mieć ochotę... rzucić wszystko i wyjechać w Bieszczady.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 5: Benefits – Oddechu -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Get-Benefits -Type "Oddechu"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Mamy momenty na szczerą rozmowę o tym, co kogo gryzie – bo wiemy, że nawet najtwardszy gość czasem potrzebuje się wygadać.</span><br>
+          <span class="output">Nikt nie wchodzi tu z misją zbawiania innych. To wymiana doświadczeń na równym poziomie, bo każdy z nas czegoś w życiu dokonał.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 6: Practice -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Show-Practice -Mode "Real"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Regularne spotkania: online (krótkie check-iny) + "męskie wypady" w realu, gdzie można pogadać szczerze o życiu i spędzić czas na sposób, jaki lubimy (warsztaty? planszówki? a może survival w lesie?).</span><br>
+          <span class="output">Cykliczne wyzwania: wypad w góry z minimalnym sprzętem czy zorganizowany challenge fizyczno-mentalny.</span><br>
+          <span class="output">Kontakt non-stop: na zamkniętym kanale komunikacji (combo Discord + Discourse) – jak masz sytuację "na wczoraj", wiesz, że chłopaki pomogą.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 7: Target Audience -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Get-Target -Audience "TrueMen"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Dla tych, którym w życiu idzie nieźle, ale czują niedosyt prawdziwej, lojalnej ekipy.</span><br>
+          <span class="output">Dla tych, którzy mają dość instagramowego coachingu i wmawiania, że albo są nie dość dobrzy, albo że trzeba "zdekonstruować swoją męskość".</span><br>
+          <span class="output">Dla tych, co wiedzą, że jedyne, czego im brak, to zaufani kumple, z którymi można zarówno pogadać, jak i zażartować, oraz wspólnie działać.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 8: Emotions -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Test-Emotions -Mode "Authentic"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Nie robimy z nich wielkiego "eventu terapeutycznego". Z czasem, gdy się lepiej poznajemy, naturalnie pojawiają się momenty, gdzie można wyrzucić z siebie trudne sprawy.</span><br>
+          <span class="output">Bez ciśnień i przypinania łatek. Chcesz – mówisz. Nie chcesz – trzymasz się praktycznych tematów.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 9: Motivation -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Get-Motivation -Source "Brotherhood"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Bo nawet najtwardszy samiec potrzebuje paczki kumpli – to zasada od wieków.</span><br>
+          <span class="output">Bo w IT (i nie tylko) liczy się wsparcie partnerów i zespołu, a w życiu prywatnym właściwi ludzie pomagają iść szybciej i pewniej.</span><br>
+          <span class="output">Bo różnice charakterów (niektórzy są "duszą towarzystwa", inni bardziej wycofani) tworzą wspólnotę, która naprawdę się uzupełnia.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 10: Real Example – Marek -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Invoke-RealExample -Profile "Marek (Tech Lead, 34)"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Marek (Tech Lead, 34): Zawsze miał siłę i determinację, ale czuł, że brakuje mu kumpli, którym mógł zaufać. W SSL znalazł gości, z którymi może pogadać o wszystkim – od kodowania, przez strategię w związku, aż po nocne akcje "muszę szybko coś załatwić".</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 11: Real Example – Krzysztof -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Invoke-RealExample -Profile "Krzysztof (Startup Founder, 28)"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Krzysztof (Startup Founder, 28): Był pewny siebie, lecz czasami pojawiało się wypalenie. Tu odkrył, że prawdziwe wsparcie kolegów – łączących pasję do IT i mocne wrażenia – napędza do działania.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 12: Summary -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Summarize-SSL -Detail "Full"</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">To NIE jest:</span><br>
+          <span class="output">  ❌ Grupa wsparcia i przytulania się</span><br>
+          <span class="output">  ❌ Miejsce na użalanie się nad sobą</span><br>
+          <span class="output">  ❌ Kolejna grupa o "męskiej sile", "red pill", etc</span><br><br>
+          <span class="output">To JEST:</span><br>
+          <span class="output">  ✅ High-trust network dla tych, którzy już osiągnęli sukces, ale chcą od życia więcej – na głębszym poziomie</span><br>
+          <span class="output">  ✅ Przestrzeń dla budowania niezawodnych sojuszy</span><br>
+          <span class="output">  ✅ Team dla tych, którzy rozumieją wartość prawdziwego braterstwa</span><br><br>
+          <span class="output">Mówisz "brat", myślimy "commit".</span><br>
+          <span class="output">Mówisz "kryzys", myślimy "merge request".</span><br>
+          <span class="output">Mówisz "pomoc" – już jedziemy.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 13: Deployment Process -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Start-DeploymentProcess</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">1. Aplikuj przez formularz poniżej</span><br>
+          <span class="output">2. Przejdź przez security check (rozmowa 1:1 ze mną)</span><br>
+          <span class="output">3. Zobacz, czy pasujesz do teamu – jeśli tak, witaj na pokładzie.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 14: SSL Protocol -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Invoke-SSLProtocol</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">Jeśli szukasz miejsca, gdzie możesz się rozwijać, ale nie potrzebujesz mentora – tylko kumpli gotowych wyruszyć na końce świata (albo do garażu pod miastem, gdy trzeba) – to tu pasujesz.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 15: Founder's Message -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Show-FoundersMessage</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">"Przez lata miałem głównie znajome kobiety. I super, ale brakowało mi ekipy gotowej wsiąść w auto w środku nocy. Teraz tworzę to, czego zawsze chciałem doświadczyć." – Ludwik, założyciel</span><br><br>
+          <span class="output">Kliknij <a href="#join" class="btn-console">[TUTAJ]</a>, żeby sprawdzić SSL.</span><br>
+          <span class="output">PS. Jeśli znasz mnie ze społeczności Lifehackerzy.pl, wiesz już, jak buduję high-performance w zespołach. Tu przenosimy te zasady na grunt prawdziwych, męskich sojuszy. Zero bullshitu, pure value.</span>
+        </div>
+      </div>
+      
+      <!-- Command Block 16: Final Quote -->
+      <div class="cmd-block">
+        <div class="cmd-line">
+          <span class="prompt">PS C:\></span> <span class="command">Write-Quote</span>
+        </div>
+        <div class="cmd-output">
+          <span class="output">"W świecie, gdzie każdy chce być samotnym wilkiem, prawdziwą siłą jest mieć pack, na którym możesz polegać."</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
